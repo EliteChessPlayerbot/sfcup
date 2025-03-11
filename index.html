@@ -3,52 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Fun Football Cup</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Football Cup - Player Stats</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+        body {
+            background-color: #0f0f0f;
+            color: white;
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+        }
+
+        .player-card {
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0px 0px 10px #00ff99;
+        }
+
+        .player-name {
+            font-size: 26px;
+            font-weight: bold;
+            color: #00ff99;
+        }
+
+        .player-info {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .player-ovr {
+            font-size: 36px;
+            font-weight: bold;
+            color: gold;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>🏆 Home Fun Football Cup 🏆</h1>
-        <p>Veer vs Aryan - Who will win the Ballon d'Or? ⚽</p>
-    </header>
 
-    <section id="matches">
-        <h2>📅 Matches & Results</h2>
-        <table>
-            <tr>
-                <th>Match</th>
-                <th>Winner</th>
-            </tr>
-            <tr>
-                <td>UCL Final</td>
-                <td id="ucl">-</td>
-            </tr>
-            <tr>
-                <td>El Clasico</td>
-                <td id="clasico">-</td>
-            </tr>
-            <tr>
-                <td>Euro Final</td>
-                <td id="euro">-</td>
-            </tr>
-            <tr>
-                <td>World Cup Final</td>
-                <td id="worldcup">-</td>
-            </tr>
-        </table>
-    </section>
+    <h1>🏆 Home Fun Football Cup 🏆</h1>
 
-    <section id="probability">
-        <h2>⚖️ Winning Probability</h2>
-        <p>Veer: <span id="veerProb">50</span>% | Aryan: <span id="aryanProb">50</span>%</p>
-        <button onclick="updateProbability()">Update Probabilities</button>
-    </section>
+    <div class="player-card">
+        <div class="player-name">Veer</div>
+        <div class="player-info">Club: FC Barcelona | Age: 14</div>
+        <div class="player-ovr">OVR: 93</div>
+        <div class="stats">
+            <span>⚡ Pace: 93</span> <span>🎯 Shooting: 113</span>
+        </div>
+        <div class="stats">
+            <span>🕹️ Dribbling: 100</span> <span>🛡️ Defending: 104</span>
+        </div>
+    </div>
 
-    <section id="players">
-        <h2>👥 Players</h2>
-        <p>Details about Veer and Aryan will go here.</p>
-    </section>
+    <div class="player-card">
+        <div class="player-name">Aryan</div>
+        <div class="player-info">Club: Real Madrid | Age: 20</div>
+        <div class="player-ovr">OVR: 87</div>
+        <div class="stats">
+            <span>⚡ Pace: 95</span> <span>🎯 Shooting: 109</span>
+        </div>
+        <div class="stats">
+            <span>🕹️ Dribbling: 101</span> <span>🛡️ Defending: 99</span>
+        </div>
+    </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
