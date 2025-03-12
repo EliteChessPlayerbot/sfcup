@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Goals</title>
+</head>
+<body>
+    <h1>⚽ Goals</h1>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Match</th>
+            <th>Goals Scored</th>
+        </tr>
+        <tbody id="goals-table"></tbody>
+    </table>
+
+    <script>
+        db.collection("goals").onSnapshot(snapshot => {
+            const table = document.getElementById("goals-table");
+            table.innerHTML = "";
+            snapshot.forEach(doc => {
+                let goal = doc.data();
+                table.innerHTML += `<tr><td>${goal.player}</td><td>${goal.match}</td><td>${goal.goals}</td></tr>`;
+            });
+        });
+    </script>
+</body>
+</html>
