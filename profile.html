@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Your Profile</h1>
+    <p>Email: <span id="user-email"></span></p>
+    <button onclick="auth.signOut()">Logout</button>
+
+    <script>
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                document.getElementById("user-email").innerText = user.email;
+            } else {
+                window.location.href = "index.html";
+            }
+        });
+    </script>
+</body>
+</html>
