@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blogs</title>
+</head>
+<body>
+    <h1>📢 Blogs</h1>
+    <div id="blog-list"></div>
+    <textarea id="new-blog" placeholder="Write a blog..."></textarea>
+    <button id="post-blog">Post</button>
+
+    <script>
+        const blogList = document.getElementById("blog-list");
+        document.getElementById("post-blog").addEventListener("click", () => {
+            const blogContent = document.getElementById("new-blog").value;
+            if (auth.currentUser) {
+                db.collection("blogs").add({
+                    user: auth.currentUser.email,
+                    content: blogContent,
+                    timestamp: new Date()
+                });
+            } else {
+                alert("You must be logged in to post!");
+            }
+        });
+
+        db.collection("blogs").orderBy("timestamp", "desc").onSnapshot(snapshot => {
+            blogList.innerHTML = "";
+            snapshot.forEach(doc => {
+                let blog = doc.data();
+                blogList.innerHTML += `<p><b>${blog.user}:</b> ${blog.content}</p>`;
+            });
+        });
+    </script>
+</body>
+</html>
