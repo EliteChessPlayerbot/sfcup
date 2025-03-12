@@ -1,37 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-<script   const firebaseConfig = {
-    apiKey: "AIzaSyCXuI4rco_Zyx8pfJfBD2ndXQ1mftJ9iWY",
-    authDomain: "sports-fun-cup.firebaseapp.com",
-    projectId: "sports-fun-cup",
-    storageBucket: "sports-fun-cup.firebasestorage.app",
-    messagingSenderId: "178092850822",
-    appId: "1:178092850822:web:5aa40add7c97a562ee5b07"
-  };
-  firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
-  const db = firebase.firestore();>
-</script>
-
-<header>
-    <h1>🏆 Home Fun Football Cup 🏆</h1>
-    <p>Veer vs Aryan - Who will win the Ballon d'Or? ⚽</p>
-    <div id="auth-buttons">
-        <button id="login-btn">Login</button>
-        <button id="register-btn">Register</button>
-        <button id="profile-btn" style="display: none;">Profile</button>
-    </div>
-</header>
-
-
-</script>
-
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🏆 Sports Fun Ballon'dor Cup 2025 🏆</title>
+    
     <link rel="stylesheet" href="style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
@@ -108,8 +81,13 @@
 <body>
 
     <header>
-        <h1>🏆 Sports Fun Ballon'dor Cup 2025  🏆</h1>
+        <h1>🏆 Sports Fun Ballon'dor Cup 2025 🏆</h1>
         <p>Veer vs Aryan - Who will win the Ballon d'Or? ⚽</p>
+        <div id="auth-buttons">
+            <button id="login-btn">Login</button>
+            <button id="register-btn">Register</button>
+            <button id="profile-btn" style="display: none;">Profile</button>
+        </div>
     </header>
 
     <section id="matches" class="section">
@@ -172,6 +150,29 @@
         </div>
     </section>
 
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCXuI4rco_Zyx8pfJfBD2ndXQ1mftJ9iWY",
+            authDomain: "sports-fun-cup.firebaseapp.com",
+            projectId: "sports-fun-cup",
+            storageBucket: "sports-fun-cup.appspot.com",
+            messagingSenderId: "178092850822",
+            appId: "1:178092850822:web:5aa40add7c97a562ee5b07"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const db = getFirestore();
+
+        console.log("✅ Firebase initialized successfully!");
+    </script>
+
     <script>
         function updateProbability() {
             let veerWin = Math.floor(Math.random() * 100);
@@ -179,23 +180,7 @@
             document.getElementById("veerProb").innerText = veerWin;
             document.getElementById("aryanProb").innerText = aryanWin;
         }
-
-<header>
-    <h1>🏆 Home Fun Football Cup 🏆</h1>
-    <p>Veer vs Aryan - Who will win the Ballon d'Or? ⚽</p>
-    <button onclick="showSignup()">Sign Up</button>
-</header>
-
     </script>
-
-<div id="auth-modal" style="display: none;">
-    <h2>Login / Register</h2>
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
-    <button id="auth-action">Login</button>
-    <p id="toggle-auth">Don't have an account? Register</p>
-</div>
-
 
 </body>
 </html>
